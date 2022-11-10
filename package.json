@@ -4,8 +4,8 @@
   "description": "# Lessons",
   "main": "index.js",
   "scripts": {
-    "build": "cd backend && npm install  && cd ../frontend && npm install && npm run build",
     "start": "node backend/server.js",
+    "build": "cd backend && npm install  && cd ../frontend && npm install && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/basir/mern-amazona/issues"
   },
-  "homepage": "https://github.com/basir/mern-amazona#readme"
+  "homepage": "https://github.com/basir/mern-amazona#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3"
+  }
 }
