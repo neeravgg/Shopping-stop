@@ -10,7 +10,7 @@ import uploadRouter from "./routes/uploadRoutes.js";
 
 dotenv.config();
 mongoose
-  .connect(process.env.MONGODB_URI)
+  .connect("mongodb+srv://shop:shop@cluster0.raiuf98.mongodb.net/?retryWrites=true&w=majority")
   .then(() => {
     console.log("connected to db");
   })
@@ -46,7 +46,5 @@ app.use((err, req, res, next) => {
   res.status(500).send({ message: err.message });
 });
 
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
-  console.log(`serve at https://shopping-stop.netlify.app/${port}`);
-});
+const port = process.env.PORT || "5000" ;
+app.listen(port);
