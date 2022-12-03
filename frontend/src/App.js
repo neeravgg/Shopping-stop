@@ -84,9 +84,9 @@ function App() {
                 <i className="fas fa-bars"></i>
               </Button>
 
-              <Link to="/">
+              <LinkContainer to="/">
                 <Navbar.Brand>amazona</Navbar.Brand>
-              </Link>
+              </LinkContainer>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav">
                 <SearchBox />
@@ -101,12 +101,12 @@ function App() {
                   </Link>
                   {userInfo ? (
                     <NavDropdown title={userInfo.name} id="basic-nav-dropdown">
-                      <Link to="/profile">
+                      <LinkContainer to="/profile">
                         <NavDropdown.Item>User Profile</NavDropdown.Item>
-                      </Link>
-                      <Link to="/orderhistory">
+                      </LinkContainer>
+                      <LinkContainer to="/orderhistory">
                         <NavDropdown.Item>Order History</NavDropdown.Item>
-                      </Link>
+                      </LinkContainer>
                       <NavDropdown.Divider />
                       <Link
                         className="dropdown-item"
@@ -123,18 +123,18 @@ function App() {
                   )}
                   {userInfo && userInfo.isAdmin && (
                     <NavDropdown title="Admin" id="admin-nav-dropdown">
-                      <Link to="/admin/dashboard">
+                      <LinkContainer to="/admin/dashboard">
                         <NavDropdown.Item>Dashboard</NavDropdown.Item>
-                      </Link>
-                      <Link to="/admin/products">
+                      </LinkContainer>
+                      <LinkContainer to="/admin/products">
                         <NavDropdown.Item>Products</NavDropdown.Item>
-                      </Link>
-                      <Link to="/admin/orders">
+                      </LinkContainer>
+                      <LinkContainer to="/admin/orders">
                         <NavDropdown.Item>Orders</NavDropdown.Item>
-                      </Link>
-                      <Link to="/admin/users">
+                      </LinkContainer>
+                      <LinkContainer to="/admin/users">
                         <NavDropdown.Item>Users</NavDropdown.Item>
-                      </Link>
+                      </LinkContainer>
                     </NavDropdown>
                   )}
                 </Nav>
@@ -155,12 +155,12 @@ function App() {
             </Nav.Item>
             {categories.map((category) => (
               <Nav.Item key={category}>
-                <Link
+                <LinkContainer
                   to={`/search?category=${category}`}
                   onClick={() => setSidebarIsOpen(false)}
                 >
                   <Nav.Link>{category}</Nav.Link>
-                </Link>
+                </LinkContainer>
               </Nav.Item>
             ))}
           </Nav>
